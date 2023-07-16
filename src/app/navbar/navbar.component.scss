@@ -1,0 +1,16 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-header-item-selected-light {
+  background: rgba(0, 0, 0, .2);
+}
+
+mat-toolbar a {
+   margin-right: 10px;
+}

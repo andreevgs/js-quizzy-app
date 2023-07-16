@@ -1,0 +1,48 @@
+<h1 class="mat-h1">{{qaListData.length}} {{title}} {{'list.title' | translate}}</h1>
+<div class="questions-list">
+  <mat-chip-listbox aria-label="Level selection" selectable multiple required>
+    <mat-chip-option
+      color="primary"
+      selected="true"
+      value="Junior"
+      (selectionChange)="filterSelectionChange($event)"
+    >
+      Junior
+    </mat-chip-option>
+    <mat-chip-option
+      color="accent"
+      selected="true"
+      value="Middle"
+      (selectionChange)="filterSelectionChange($event)"
+    >
+      Middle
+    </mat-chip-option>
+    <mat-chip-option
+      color="warn"
+      selected="true"
+      value="Senior"
+      (selectionChange)="filterSelectionChange($event)"
+    >
+      Senior
+    </mat-chip-option>
+  </mat-chip-listbox>
+  <mat-accordion multi>
+    <ng-container *ngFor="let qa of qaListData; index as i">
+      <mat-expansion-panel *ngIf="selectedFilters.includes(qa.level)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span markdown [disableSanitizer]="true" [inline]="true" class="prism-theme default">{{i+1}}.&nbsp;{{qa.title}}</span>
+            </mat-panel-title>
+          <mat-panel-description>
+            <mat-chip color="primary" selected highlighted disableRipple *ngIf="qa.level === 'Junior'">Junior</mat-chip>
+            <mat-chip color="accent" selected highlighted disableRipple *ngIf="qa.level === 'Middle'">Middle</mat-chip>
+            <mat-chip color="warn" selected highlighted disableRipple *ngIf="qa.level === 'Senior'">Senior</mat-chip>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div markdown [disableSanitizer]="true" class="prism-theme default">
+          {{qa.content}}
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</div>

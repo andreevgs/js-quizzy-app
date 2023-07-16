@@ -1,0 +1,27 @@
+{
+  "navbar": {
+    "tooltips": {
+      "theme": {
+        "light": "Switch to light theme",
+        "dark": "Switch to dark theme"
+      },
+      "language": "Language"
+    },
+    "language": {
+      "en": "English",
+      "ru": "Russian (Русский)"
+    }
+  },
+  "main": {
+    "title": "JSQuizzy",
+    "subtitle": "Collection of interview questions for JS developers"
+  },
+  "list": {
+    "title": "interview questions"
+  },
+  "pageNotFound": {
+    "title": "Page not found",
+    "subtitle": "Return to the",
+    "link": "main page"
+  }
+}
