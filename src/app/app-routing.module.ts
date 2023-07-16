@@ -6,10 +6,12 @@ import {LangGuard} from "./common/guards/lang.guard";
 import {DefaultComponent} from "./default/default.component";
 import {PageNotFoundComponent} from "./common/page-not-found/page-not-found.component";
 
+const langSegment = document.baseURI.includes('github.io') ? 'js-quizz-app/:lang' : ':lang';
+
 const routes: Routes = [
   {path: '', redirectTo: '//', pathMatch: 'full'},
   {
-    path: ':lang',
+    path: langSegment,
     canActivate: [LangGuard],
     component: DefaultComponent,
     children: [
