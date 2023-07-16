@@ -10,9 +10,9 @@ const mainSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app' : '
 const langSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app/:lang' : ':lang';
 
 const routes: Routes = [
-  {path: mainSegment, redirectTo: mainSegment + '//', pathMatch: 'full'},
+  {path: '', redirectTo: '//', pathMatch: 'full'},
   {
-    path: langSegment,
+    path: ':lang',
     canActivate: [LangGuard],
     component: DefaultComponent,
     children: [

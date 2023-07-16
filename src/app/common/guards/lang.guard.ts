@@ -11,6 +11,7 @@ export class LangGuard implements CanActivate {
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     const lang = route.paramMap.get('lang');
+    console.log(lang);
     try {
 
       if (lang && (lang === 'ru' || lang === 'en')) {
