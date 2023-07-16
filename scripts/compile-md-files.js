@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const jsonFileRu = 'src/pages/javascript/ru/javascript.json';
-const jsonFileEn = 'src/pages/javascript/en/javascript.json';
+const jsonFileRu = 'pages/javascript/ru/javascript.json';
+const jsonFileEn = 'pages/javascript/en/javascript.json';
 
 function getCombinedDataFromDirectory(directory, level) {
   try {
@@ -33,15 +33,15 @@ function getCombinedDataFromDirectory(directory, level) {
 }
 
 const fullCombinedContentArrayRu = JSON.stringify([
-  ...getCombinedDataFromDirectory('src/pages/javascript/ru/junior', 'Junior'),
-  ...getCombinedDataFromDirectory('src/pages/javascript/ru/middle', 'Middle'),
-  ...getCombinedDataFromDirectory('src/pages/javascript/ru/senior', 'Senior'),
+  ...getCombinedDataFromDirectory('pages/javascript/ru/junior', 'Junior'),
+  ...getCombinedDataFromDirectory('pages/javascript/ru/middle', 'Middle'),
+  ...getCombinedDataFromDirectory('pages/javascript/ru/senior', 'Senior'),
 ]);
 
 const fullCombinedContentArrayEn = JSON.stringify([
-  ...getCombinedDataFromDirectory('src/pages/javascript/en/junior', 'Junior'),
-  ...getCombinedDataFromDirectory('src/pages/javascript/en/middle', 'Middle'),
-  ...getCombinedDataFromDirectory('src/pages/javascript/en/senior', 'Senior'),
+  ...getCombinedDataFromDirectory('pages/javascript/en/junior', 'Junior'),
+  ...getCombinedDataFromDirectory('pages/javascript/en/middle', 'Middle'),
+  ...getCombinedDataFromDirectory('pages/javascript/en/senior', 'Senior'),
 ]);
 
 fs.writeFile(jsonFileRu, fullCombinedContentArrayRu, 'utf-8', (err) => {

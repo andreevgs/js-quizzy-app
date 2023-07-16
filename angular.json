@@ -107,6 +107,9 @@
               "node_modules/prismjs/components/prism-javascript.min.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
