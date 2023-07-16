@@ -55,7 +55,7 @@ import {MatRadioModule} from "@angular/material/radio";
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+        deps: [HttpClient],
       }
     }),
     MatMenuModule,
