@@ -30,6 +30,7 @@ export class NavbarComponent {
   switchLanguage(lang: string): void {
     const segmentedUrl = this.router.url.split('/').filter(segment => segment !== '');
       segmentedUrl[0] = lang;
+      console.log(segmentedUrl);
       window.location.href = segmentedUrl.join('/');
   }
 }
