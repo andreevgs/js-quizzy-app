@@ -11,6 +11,14 @@ a {
   background: rgba(0, 0, 0, .2);
 }
 
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
 mat-toolbar a {
    margin-right: 10px;
 }

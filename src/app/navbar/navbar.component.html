@@ -2,10 +2,16 @@
   <a [routerLink]="'/' + currentLanguage">JSQuizzy</a>
   <span class="example-spacer"></span>
   <a
-    mat-button [routerLink]="'/' + currentLanguage + '/javascript'"
+    mat-button [routerLink]="'/' + currentLanguage + '/questions'"
     routerLinkActive="navbar-header-item-selected-light"
   >
-    JAVASCRIPT
+    QUESTIONS
+  </a>
+  <a
+    mat-button [routerLink]="'/' + currentLanguage + '/tasks'"
+    routerLinkActive="navbar-header-item-selected-light"
+  >
+    TASKS
   </a>
   <button
     mat-icon-button

@@ -18,6 +18,13 @@ $angular-dark-theme: mat.define-dark-theme(
   code, a {
     color: #1976d2;
   }
+  .sidenav-item-selected {
+    background: rgba(63,81,181,.15);
+  }
+
+  .sidenav-item-selected span {
+    color: #3f51b5 !important;
+  }
   @import 'prism-themes/prism-light';
 }
 
@@ -28,6 +35,14 @@ $angular-dark-theme: mat.define-dark-theme(
   a {
     color: #7fc9ff;
   }
+  .sidenav-item-selected::before {
+    background-color: var(--mdc-list-list-item-hover-state-layer-color);
+    opacity: var(--mdc-list-list-item-hover-state-layer-opacity);
+  }
+  .sidenav-item-selected span {
+    color: #7fc9ff !important;
+  }
+
   @include mat.all-component-colors($angular-dark-theme);
   @import 'prism-themes/prism-dark';
 }

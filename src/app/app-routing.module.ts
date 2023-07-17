@@ -5,9 +5,8 @@ import {QaListComponent} from "./qa-list/qa-list.component";
 import {LangGuard} from "./common/guards/lang.guard";
 import {DefaultComponent} from "./default/default.component";
 import {PageNotFoundComponent} from "./common/page-not-found/page-not-found.component";
+import {NavigationDrawerComponent} from "./navigation-drawer/navigation-drawer.component";
 
-const mainSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app' : '';
-const langSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app/:lang' : ':lang';
 
 const routes: Routes = [
   {path: '', redirectTo: '//', pathMatch: 'full'},
@@ -16,12 +15,30 @@ const routes: Routes = [
     canActivate: [LangGuard],
     component: DefaultComponent,
     children: [
-      {path: '', component: MainComponent},
-      {path: 'javascript', component: QaListComponent},
-      {path: '**', component: PageNotFoundComponent},
-    ]
+      {
+        path: '', pathMatch: 'full',
+        component: MainComponent,
+      },
+      {
+        path: 'questions',
+        component: NavigationDrawerComponent,
+        children: [
+          {path: '', redirectTo: 'javascript', pathMatch: 'full'},
+          {path: 'javascript', component: QaListComponent},
+          {path: '**', component: PageNotFoundComponent},
+        ]
+      },
+      {
+        path: 'tasks',
+        component: NavigationDrawerComponent,
+        children: [
+          {path: '', redirectTo: 'javascript', pathMatch: 'full'},
+          {path: 'javascript', component: QaListComponent},
+          {path: '**', component: PageNotFoundComponent},
+        ]
+      },
+    ],
   },
-  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({

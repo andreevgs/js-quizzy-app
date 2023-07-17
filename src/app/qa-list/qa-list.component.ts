@@ -35,6 +35,7 @@ export class QaListComponent implements OnInit {
 
   ngOnInit(): void {
     const currentRoute = this.route.snapshot.url.toString();
+    console.log(currentRoute)
     this.title = currentRoute.charAt(0).toUpperCase() + currentRoute.slice(1);
     const jsonFilePath = `https://raw.githubusercontent.com/andreevgs/js-quizzy-app/master/pages/${currentRoute}/${this.getCurrentLanguage()}/${currentRoute}.json`;
 

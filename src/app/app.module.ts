@@ -25,6 +25,9 @@ import {HttpLoaderFactory} from "./common/factories/translation-loader.factory";
 import {DefaultComponent} from './default/default.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatRadioModule} from "@angular/material/radio";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,7 @@ import {MatRadioModule} from "@angular/material/radio";
     MainComponent,
     NavbarComponent,
     DefaultComponent,
+    NavigationDrawerComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,9 @@ import {MatRadioModule} from "@angular/material/radio";
       }
     }),
     MatMenuModule,
-    MatRadioModule
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [TranslateService],
   bootstrap: [AppComponent]
