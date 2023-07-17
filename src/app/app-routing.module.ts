@@ -10,7 +10,7 @@ const mainSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app' : '
 const langSegment = document.baseURI.includes('github.io') ? 'js-quizzy-app/:lang' : ':lang';
 
 const routes: Routes = [
-  {path: '/', redirectTo: '//', pathMatch: 'full'},
+  {path: '', redirectTo: '//', pathMatch: 'full'},
   {
     path: ':lang',
     canActivate: [LangGuard],
@@ -20,7 +20,8 @@ const routes: Routes = [
       {path: 'javascript', component: QaListComponent},
       {path: '**', component: PageNotFoundComponent},
     ]
-  }
+  },
+  {path: '**', component: PageNotFoundComponent},
 ];
 
 @NgModule({
