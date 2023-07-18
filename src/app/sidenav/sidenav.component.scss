@@ -1,0 +1,10 @@
+.nav-viewer {
+  position: sticky;
+  top: 0;
+}
+
+.nav-viewer-content {
+  width: 240px;
+  height: calc(100vh - 64px);
+  overflow: auto;
+}

@@ -28,6 +28,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer
     NavbarComponent,
     DefaultComponent,
     NavigationDrawerComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
