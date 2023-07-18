@@ -1,7 +1,6 @@
 .mat-h1 {
   padding-top: 40px;
   margin-bottom: 40px;
-  text-align: center;
 }
 
 .mat-h3 {
@@ -11,11 +10,11 @@
 mat-chip-listbox {
   margin-bottom: 16px;
 }
-
+.questions-list-container {
+  padding: 0 30px 20px 30px;
+}
 .questions-list {
-  max-width: 800px;
   margin: 0 auto;
-  padding-bottom: 30px;
 }
 
 .question {

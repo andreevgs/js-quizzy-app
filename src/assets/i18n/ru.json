@@ -1,5 +1,9 @@
 {
   "navbar": {
+    "pages": {
+      "questions": "ВОПРОСЫ",
+      "tasks": "ЗАДАЧИ"
+    },
     "tooltips": {
       "theme": {
         "light": "Включить светлую тему",

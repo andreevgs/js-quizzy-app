@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-sidenav',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
+  currentLanguage: string;
 
+  constructor(
+    private translateService: TranslateService
+  ) {
+    this.currentLanguage = this.translateService.currentLang;
+  }
 }

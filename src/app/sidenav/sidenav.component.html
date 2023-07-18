@@ -1,8 +1,8 @@
 <div class="nav-viewer">
   <div class="nav-viewer-content">
     <mat-nav-list>
-      <a mat-list-item routerLink="/ru/questions/javascript" routerLinkActive="sidenav-item-selected">JavaScript</a>
-      <a mat-list-item routerLink="/ru/questions/typescript" routerLinkActive="sidenav-item-selected">TypeScript</a>
+      <a mat-list-item [routerLink]="'/' + currentLanguage + '/questions/javascript'" routerLinkActive="sidenav-item-selected">JavaScript</a>
+      <a mat-list-item [routerLink]="'/' + currentLanguage + '/questions/typescript'" routerLinkActive="sidenav-item-selected">TypeScript</a>
     </mat-nav-list>
   </div>
 </div>

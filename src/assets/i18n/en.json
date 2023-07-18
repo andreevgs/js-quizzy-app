@@ -1,5 +1,9 @@
 {
   "navbar": {
+    "pages": {
+      "questions": "QUESTIONS",
+      "tasks": "TASKS"
+    },
     "tooltips": {
       "theme": {
         "light": "Switch to light theme",
