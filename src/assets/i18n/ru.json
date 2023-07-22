@@ -27,5 +27,9 @@
     "title": "Страница не найдена",
     "subtitle": "Вернуться на",
     "link": "главную страницу"
+  },
+  "sidenav": {
+    "javascript": "JavaScript",
+    "typescript": "TypeScript"
   }
 }
