@@ -1,5 +1,9 @@
 {
   "navbar": {
+    "pages": {
+      "questions": "ВОПРОСЫ",
+      "tasks": "ЗАДАЧИ"
+    },
     "tooltips": {
       "theme": {
         "light": "Включить светлую тему",
@@ -23,5 +27,9 @@
     "title": "Страница не найдена",
     "subtitle": "Вернуться на",
     "link": "главную страницу"
+  },
+  "sidenav": {
+    "javascript": "JavaScript",
+    "typescript": "TypeScript"
   }
 }
