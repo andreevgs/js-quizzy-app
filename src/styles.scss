@@ -71,7 +71,6 @@ body {
 }
 
 app-navigation-drawer {
-  //margin-top: 64px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -82,4 +81,8 @@ app-default {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 64px);
+}
+
+app-qa-list {
+  flex-grow: 1;
 }

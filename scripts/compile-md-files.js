@@ -18,9 +18,9 @@ function getCombinedDataFromDirectory(directory, level) {
 
       let content = fs.readFileSync(filePath, 'utf-8');
       const titleStartIndex = content.indexOf('### ') + 4;
-      const titleEndIndex = content.indexOf('\n\n');
+      const titleEndIndex = content.search(/\r?\n\r?\n/);
       const title = content.substring(titleStartIndex, titleEndIndex);
-      content = content.replace(`### ${title}\n\n`, '');
+      content = content.replace(new RegExp(`### ${title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\r?\\n\\r?\\n`), '');
       content = content.trim();
       combinedContentArray.push({ title, content, level });
     });
