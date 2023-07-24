@@ -43,6 +43,10 @@ export class QaListComponent implements OnInit {
     this.dataSharingService.setData(data);
   }
 
+  trackByFn(index: number, qa: any) {
+    return qa.id;
+  }
+
   ngOnInit(): void {
     const currentRoute = this.route.snapshot.url.toString();
     console.log(currentRoute)
@@ -50,7 +54,8 @@ export class QaListComponent implements OnInit {
     const jsonFilePath = `https://raw.githubusercontent.com/andreevgs/js-quizzy-app/master/pages/${currentRoute}/${this.getCurrentLanguage()}/${currentRoute}.json`;
 
     this.http.get(jsonFilePath).subscribe((data: any) => {
-      this.qaListData = data;
+      this.qaListData = data.map((item: any, index: number) => ({...item, id: index}));
+      console.log(this.qaListData)
       const title = `${this.qaListData.length} ${this.translateService.instant('sidenav.' + currentRoute)} ${this.translateService.instant('list.title')}`;
       this.sendDataToNavigationDrawer(title);
     });
