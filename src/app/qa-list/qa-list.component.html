@@ -26,9 +26,9 @@
         Senior
       </mat-chip-option>
     </mat-chip-listbox>
-    <mat-accordion multi>
+    <mat-accordion>
       <ng-container *ngFor="let qa of qaListData; trackBy: trackByFn">
-        <mat-expansion-panel *ngIf="selectedFilters.includes(qa.level)">
+        <mat-expansion-panel *ngIf="selectedFilters.includes(qa.level)" (closed)="logClosingPanel($event)">
           <mat-expansion-panel-header>
             <mat-panel-title>
                 <span markdown [disableSanitizer]="true" [inline]="true" class="prism-theme default">{{qa.id + 1}}.&nbsp;{{qa.title}}</span>
