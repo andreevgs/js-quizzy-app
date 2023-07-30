@@ -47,3 +47,17 @@ mat-panel-description {
   flex-grow: 0;
   justify-content: end;
 }
+
+mat-card {
+  margin-bottom: 12px;
+}
+mat-card-header {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+mat-card-title {
+  font-size: 16px;
+  margin-right: 16px;
+}

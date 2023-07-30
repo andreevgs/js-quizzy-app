@@ -26,29 +26,61 @@
         Senior
       </mat-chip-option>
     </mat-chip-listbox>
-    <mat-accordion>
+    <div>
       <ng-container *ngFor="let qa of qaListData; trackBy: trackByFn">
-        <mat-expansion-panel *ngIf="selectedFilters.includes(qa.level)" (closed)="logClosingPanel($event)">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                <span markdown [disableSanitizer]="true" [inline]="true" class="prism-theme default">{{qa.id + 1}}.&nbsp;{{qa.title}}</span>
-            </mat-panel-title>
-            <mat-panel-description>
-              <mat-chip color="primary" selected highlighted disableRipple *ngIf="qa.level === 'Junior'">Junior
-              </mat-chip>
-              <mat-chip color="accent" selected highlighted disableRipple *ngIf="qa.level === 'Middle'">Middle
-              </mat-chip>
-              <mat-chip color="warn" selected highlighted disableRipple *ngIf="qa.level === 'Senior'">Senior
-              </mat-chip>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <ng-template matExpansionPanelContent>
+        <mat-card *ngIf="selectedFilters.includes(qa.level)" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title>
+              <span markdown [disableSanitizer]="true" [inline]="true" class="prism-theme default">{{qa.id + 1}}.&nbsp;{{qa.title}}</span>
+            </mat-card-title>
+            <mat-chip color="primary" selected highlighted disableRipple *ngIf="qa.level === 'Junior'">Junior
+            </mat-chip>
+            <mat-chip color="accent" selected highlighted disableRipple *ngIf="qa.level === 'Middle'">Middle
+            </mat-chip>
+            <mat-chip color="warn" selected highlighted disableRipple *ngIf="qa.level === 'Senior'">Senior
+            </mat-chip>
+            <button
+              mat-icon-button
+              matTooltip="Show answer"
+              (click)="qa.expanded = !qa.expanded"
+            >
+              <mat-icon>expand_more</mat-icon>
+            </button>
+          </mat-card-header>
+          <mat-card-content *ngIf="qa.expanded">
             <div markdown [disableSanitizer]="true" class="prism-theme default">
               {{qa.content}}
             </div>
-          </ng-template>
-        </mat-expansion-panel>
+          </mat-card-content>
+        </mat-card>
       </ng-container>
-    </mat-accordion>
+    </div>
+<!--    <mat-accordion>-->
+<!--      <ng-container *ngFor="let qa of qaListData; trackBy: trackByFn">-->
+<!--        <mat-expansion-panel-->
+<!--          *ngIf="selectedFilters.includes(qa.level)"-->
+<!--        >-->
+<!--          <mat-expansion-panel-header>-->
+<!--            <mat-panel-title>-->
+<!--              <span markdown [disableSanitizer]="true" [inline]="true" class="prism-theme default">{{qa.id + 1}}-->
+<!--                .&nbsp;{{qa.title}}</span>-->
+<!--            </mat-panel-title>-->
+<!--            <mat-panel-description>-->
+<!--              <mat-chip color="primary" selected highlighted disableRipple *ngIf="qa.level === 'Junior'">Junior-->
+<!--              </mat-chip>-->
+<!--              <mat-chip color="accent" selected highlighted disableRipple *ngIf="qa.level === 'Middle'">Middle-->
+<!--              </mat-chip>-->
+<!--              <mat-chip color="warn" selected highlighted disableRipple *ngIf="qa.level === 'Senior'">Senior-->
+<!--              </mat-chip>-->
+<!--            </mat-panel-description>-->
+<!--          </mat-expansion-panel-header>-->
+<!--          <ng-template matExpansionPanelContent>-->
+<!--            <div markdown [disableSanitizer]="true" class="prism-theme default">-->
+<!--              {{qa.content}}-->
+<!--            </div>-->
+<!--          </ng-template>-->
+<!--        </mat-expansion-panel>-->
+<!--      </ng-container>-->
+<!--    </mat-accordion>-->
   </div>
 </div>

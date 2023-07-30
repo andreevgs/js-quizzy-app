@@ -29,6 +29,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
 import { NavigationDrawerComponent } from './navigation-drawer/navigation-drawer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatMenuModule,
     MatRadioModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [TranslateService],
   bootstrap: [AppComponent]

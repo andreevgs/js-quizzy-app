@@ -51,6 +51,12 @@ export class QaListComponent implements OnInit {
     return qa.id;
   }
 
+  onPanelClosed(qa: any) {
+    setTimeout(() => {
+      qa.expanded = false;
+    }, 300);
+  }
+
   ngOnInit(): void {
     const currentRoute = this.route.snapshot.url.toString();
     console.log(currentRoute)
@@ -58,7 +64,7 @@ export class QaListComponent implements OnInit {
     const jsonFilePath = `https://raw.githubusercontent.com/andreevgs/js-quizzy-app/master/pages/${currentRoute}/${this.getCurrentLanguage()}/${currentRoute}.json`;
 
     this.http.get(jsonFilePath).subscribe((data: any) => {
-      this.qaListData = data.map((item: any, index: number) => ({...item, id: index}));
+      this.qaListData = data.map((item: any, index: number) => ({...item, id: index, expanded: false}));
       console.log(this.qaListData)
       const title = `${this.qaListData.length} ${this.translateService.instant('sidenav.' + currentRoute)} ${this.translateService.instant('list.title')}`;
       this.sendDataToNavigationDrawer(title);
