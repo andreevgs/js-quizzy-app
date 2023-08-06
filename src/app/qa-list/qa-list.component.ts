@@ -26,10 +26,6 @@ export class QaListComponent implements OnInit {
     return this.translateService.currentLang;
   }
 
-  logClosingPanel(event: any) {
-    console.log(event)
-  }
-
   filterSelectionChange(selectionChange: MatChipSelectionChange) {
     if(selectionChange.selected && selectionChange.isUserInput){
       this.selectedFilters.push(selectionChange.source.value);
@@ -51,10 +47,8 @@ export class QaListComponent implements OnInit {
     return qa.id;
   }
 
-  onPanelClosed(qa: any) {
-    setTimeout(() => {
-      qa.expanded = false;
-    }, 300);
+  getI18nTranslation(key: string){
+    return this.translateService.instant(key);
   }
 
   ngOnInit(): void {

@@ -41,10 +41,10 @@
             </mat-chip>
             <button
               mat-icon-button
-              matTooltip="Show answer"
+              [matTooltip]="qa.expanded ? getI18nTranslation('list.card.hideAnswer') : getI18nTranslation('list.card.showAnswer')"
               (click)="qa.expanded = !qa.expanded"
             >
-              <mat-icon>expand_more</mat-icon>
+              <mat-icon [class.mat-card-icon-expanded]="qa.expanded" [class.mat-card-icon-collapsed]="!qa.expanded">expand_more</mat-icon>
             </button>
           </mat-card-header>
           <mat-card-content *ngIf="qa.expanded">

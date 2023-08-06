@@ -57,7 +57,21 @@ mat-card-header {
   align-items: center;
 }
 
+mat-card-header mat-chip {
+  margin-right: 10px;
+}
+
 mat-card-title {
   font-size: 16px;
   margin-right: 16px;
+}
+
+.mat-card-icon-collapsed {
+  transform: rotate(0);
+  transition: 150ms linear all;
+}
+
+.mat-card-icon-expanded {
+  transform: rotate(180deg);
+  transition: 150ms linear all;
 }
