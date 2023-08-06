@@ -21,7 +21,11 @@
     "subtitle": "Collection of interview questions for JS developers"
   },
   "list": {
-    "title": "interview questions"
+    "title": "interview questions",
+    "card": {
+      "showAnswer": "Show answer",
+      "hideAnswer": "Hide answer"
+    }
   },
   "pageNotFound": {
     "title": "Page not found",
