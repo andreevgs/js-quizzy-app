@@ -1,11 +1,12 @@
-.example-container {
-}
-
 header {
   display: flex;
   align-items: center;
   background: #3f51b5;
   padding-left: 20px;
+}
+
+#menu-switcher {
+  color: #fff;
 }
 
 header h1 {
@@ -25,4 +26,17 @@ header h1 {
 main {
   display: flex;
   flex: 1 1 auto;
+}
+
+mat-drawer-container {
+  display: none;
+}
+
+@media (max-width: 959px) {
+  mat-drawer-container {
+    display: block;
+  }
+  mat-sidenav-container {
+    display: none;
+  }
 }

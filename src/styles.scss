@@ -90,3 +90,10 @@ app-qa-list {
 .questions-list-container .mat-mdc-card-header-text {
   flex-grow: 1;
 }
+
+@media (max-width: 599px) {
+  app-default {
+    padding-top: 92px;
+    height: calc(100vh - 92px);
+  }
+}

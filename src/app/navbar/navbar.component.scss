@@ -7,6 +7,17 @@ a {
   color: inherit;
 }
 
+.navbar-small {
+  display: none;
+  flex-direction: row;
+  height: 36px;
+  padding: 0;
+}
+
+.navbar-small a {
+  flex-grow: 1;
+}
+
 .navbar-header-item-selected-light {
   background: rgba(0, 0, 0, .2);
 }
@@ -17,8 +28,18 @@ mat-toolbar {
   left: 0;
   right: 0;
   z-index: 2;
+  flex-wrap: wrap;
 }
 
-mat-toolbar a {
+.default-navbar a {
    margin-right: 10px;
+}
+
+@media (max-width: 599px) {
+  .default-navbar a[mat-button] {
+    display: none;
+  }
+  .navbar-small {
+    display: flex;
+  }
 }

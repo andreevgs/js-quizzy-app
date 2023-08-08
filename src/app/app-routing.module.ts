@@ -25,7 +25,6 @@ const routes: Routes = [
         children: [
           {path: '', redirectTo: 'javascript', pathMatch: 'full'},
           {path: 'javascript', component: QaListComponent},
-          {path: '**', component: PageNotFoundComponent},
         ]
       },
       {
@@ -34,7 +33,6 @@ const routes: Routes = [
         children: [
           {path: '', redirectTo: 'javascript', pathMatch: 'full'},
           {path: 'javascript', component: QaListComponent},
-          {path: '**', component: PageNotFoundComponent},
         ]
       },
       {path: '**', component: PageNotFoundComponent},
