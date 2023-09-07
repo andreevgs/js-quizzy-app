@@ -15,6 +15,10 @@ $angular-dark-theme: mat.define-dark-theme(
     )
 );
 
+:root {
+  --app-height: 100%;
+}
+
 .light-mode {
   code, a {
     color: #1976d2;
@@ -80,7 +84,7 @@ app-default {
   padding-top: 64px;
   display: flex;
   flex-direction: column;
-  height: calc(var(-webkit-fill-available) - 64px);
+  height: calc(var(--app-height) - 64px);
 }
 
 app-qa-list {
@@ -94,6 +98,6 @@ app-qa-list {
 @media (max-width: 599px) {
   app-default {
     padding-top: 92px;
-    height: calc(var(-webkit-fill-available) - 92px);
+    height: calc(var(--app-height) - 92px);
   }
 }
