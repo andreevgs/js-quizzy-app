@@ -15,10 +15,6 @@ $angular-dark-theme: mat.define-dark-theme(
     )
 );
 
-body.lock-scroll {
-  overflow: hidden;
-}
-
 .light-mode {
   code, a {
     color: #1976d2;
@@ -65,7 +61,7 @@ body.lock-scroll {
   @import 'prism-themes/prism-dark';
 }
 
-body {
+html, body {
   height: 100vh;
 }
 
@@ -96,11 +92,8 @@ app-qa-list {
 }
 
 @media (max-width: 599px) {
-  body {
-    height: unset;
-  }
   app-default {
     padding-top: 92px;
-    height: unset;
+    height: calc(100vh - 92px);
   }
 }
