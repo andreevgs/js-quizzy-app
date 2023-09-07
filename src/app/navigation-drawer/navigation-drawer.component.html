@@ -13,7 +13,7 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
   <mat-drawer-container [hasBackdrop]="true">
-    <mat-drawer #drawer mode="over">
+    <mat-drawer #drawer mode="over" (openedChange)="onToggleDrawer(drawer)">
       <app-sidenav></app-sidenav>
     </mat-drawer>
     <mat-drawer-content>

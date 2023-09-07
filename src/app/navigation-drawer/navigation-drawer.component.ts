@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {Subscription} from "rxjs";
 import {DataSharingService} from "../common/services/data-sharing.service";
+import {MatDrawer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-navigation-drawer',
@@ -19,6 +20,13 @@ export class NavigationDrawerComponent implements OnInit {
     this.subscription = this.dataSharingService.data$.subscribe((data) => {
       this.receivedData = data;
     });
+  }
+  onToggleDrawer(drawer: MatDrawer) {
+    if (drawer.opened) {
+      document.body.classList.add('lock-scroll');
+    } else {
+      document.body.classList.remove('lock-scroll');
+    }
   }
 
   ngOnInit(): void {

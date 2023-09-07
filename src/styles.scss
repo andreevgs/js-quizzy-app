@@ -15,8 +15,8 @@ $angular-dark-theme: mat.define-dark-theme(
     )
 );
 
-:root {
-  --app-height: 100%;
+body.lock-scroll {
+  overflow: hidden;
 }
 
 .light-mode {
@@ -84,7 +84,7 @@ app-default {
   padding-top: 64px;
   display: flex;
   flex-direction: column;
-  height: calc(var(--app-height) - 64px);
+  height: calc(100vh - 64px);
 }
 
 app-qa-list {
@@ -98,6 +98,6 @@ app-qa-list {
 @media (max-width: 599px) {
   app-default {
     padding-top: 92px;
-    height: calc(var(--app-height) - 92px);
+    height: unset;
   }
 }
