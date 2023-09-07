@@ -80,7 +80,7 @@ app-default {
   padding-top: 64px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 64px);
+  height: calc(var(-webkit-fill-available) - 64px);
 }
 
 app-qa-list {
