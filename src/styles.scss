@@ -61,10 +61,6 @@ $angular-dark-theme: mat.define-dark-theme(
   @import 'prism-themes/prism-dark';
 }
 
-html, body {
-  //height: 100vh;
-}
-
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -94,7 +90,12 @@ app-qa-list {
 @media (max-width: 599px) {
   app-default {
     padding-top: 92px;
-    //height: calc(100vh - 92px);
+    height: unset;
+  }
+}
+
+@media (max-width: 959px) {
+  app-default {
     height: unset;
   }
   app-default.lock-scroll {
