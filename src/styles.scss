@@ -62,8 +62,7 @@ $angular-dark-theme: mat.define-dark-theme(
 }
 
 html, body {
-  height: 100vh;
-  overflow: hidden;
+  //height: 100vh;
 }
 
 body {
@@ -95,6 +94,10 @@ app-qa-list {
 @media (max-width: 599px) {
   app-default {
     padding-top: 92px;
-    height: calc(100vh - 92px);
+    //height: calc(100vh - 92px);
+    height: unset;
+    position: fixed;
+    top: 0;
+    bottom: 0;
   }
 }
