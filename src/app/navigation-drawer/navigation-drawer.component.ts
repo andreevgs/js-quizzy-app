@@ -13,6 +13,7 @@ export class NavigationDrawerComponent implements OnInit {
   receivedData: string | null = null;
   private subscription: Subscription;
   currentRoute: string;
+  isDrawerOpened: boolean = false;
 
   constructor(private router: Router, private dataSharingService: DataSharingService) {
     const segmentedUrl = this.router.url.split('/').filter(segment => segment !== '');
@@ -21,12 +22,15 @@ export class NavigationDrawerComponent implements OnInit {
       this.receivedData = data;
     });
   }
-  onToggleDrawer(drawer: MatDrawer) {
-    if (drawer.opened) {
-      document.body.classList.add('lock-scroll');
+  toggleDrawer(drawer: MatDrawer) {
+    if (this.isDrawerOpened) {
+      document.querySelector('app-default')?.classList.remove('lock-scroll');
+      this.isDrawerOpened = false;
     } else {
-      document.body.classList.remove('lock-scroll');
+      document.querySelector('app-default')?.classList.add('lock-scroll');
+      this.isDrawerOpened = true;
     }
+    drawer.toggle();
   }
 
   ngOnInit(): void {

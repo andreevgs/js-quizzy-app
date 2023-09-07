@@ -96,6 +96,8 @@ app-qa-list {
     padding-top: 92px;
     //height: calc(100vh - 92px);
     height: unset;
+  }
+  app-default.lock-scroll {
     position: fixed;
     top: 0;
     bottom: 0;

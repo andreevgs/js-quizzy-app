@@ -12,13 +12,13 @@
       </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
-  <mat-drawer-container [hasBackdrop]="true">
+  <mat-drawer-container [hasBackdrop]="true" (backdropClick)="toggleDrawer(drawer)">
     <mat-drawer #drawer mode="over">
       <app-sidenav></app-sidenav>
     </mat-drawer>
     <mat-drawer-content>
       <header>
-        <button mat-icon-button (click)="drawer.toggle()">
+        <button mat-icon-button (click)="toggleDrawer(drawer)">
           <mat-icon id="menu-switcher">menu</mat-icon>
         </button>
         <h1>{{receivedData || 'Загрузка'}}</h1>
